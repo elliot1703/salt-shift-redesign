@@ -109,9 +109,9 @@
     .mega-dropdown {
       position: absolute; top: 100%; left: 50%; transform: translateX(-50%);
       width: 680px; padding: 28px 32px;
-      background: rgba(14, 14, 14, 0.98); backdrop-filter: blur(24px);
-      border: 1px solid rgba(255,255,255,0.08); border-radius: var(--radius-md);
-      box-shadow: 0 24px 60px rgba(0,0,0,0.6);
+      background: rgba(255, 255, 255, 0.98); backdrop-filter: blur(24px);
+      border: 1px solid rgba(0,0,0,0.08); border-radius: var(--radius-md);
+      box-shadow: 0 24px 60px rgba(0,0,0,0.15);
       opacity: 0; visibility: hidden; pointer-events: none;
       transition: opacity 0.25s ease, transform 0.25s ease, visibility 0.25s ease;
       transform: translateX(-50%) translateY(8px);
@@ -129,35 +129,35 @@
     .mega-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
     .mega-col-label {
       font-size: 10px; font-weight: 800; letter-spacing: 0.15em; text-transform: uppercase;
-      color: var(--lime); margin-bottom: 16px;
+      color: #7a8015; margin-bottom: 16px;
     }
     .mega-vehicles { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
     .mega-vehicle-card {
       display: flex; flex-direction: column; align-items: center; gap: 8px;
-      padding: 14px 10px; background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.06);
-      border-radius: var(--radius-sm); transition: all 0.2s ease; text-align: center;
+      padding: 8px; background: #F5F5F5; border: 1px solid rgba(0,0,0,0.06);
+      border-radius: var(--radius-sm); transition: all 0.2s ease; text-align: center; overflow: hidden;
     }
-    .mega-vehicle-card:hover { background: var(--lime-glow); border-color: rgba(197, 206, 47, 0.25); }
-    .mega-vehicle-card img { width: 64px; height: 64px; object-fit: contain; border-radius: 6px; }
-    .mega-vehicle-card span { font-size: 12px; font-weight: 600; color: var(--text-primary); }
+    .mega-vehicle-card:hover { background: rgba(197, 206, 47, 0.1); border-color: rgba(197, 206, 47, 0.3); }
+    .mega-vehicle-card img { width: 100%; height: 80px; object-fit: cover; border-radius: 4px; }
+    .mega-vehicle-card span { font-size: 12px; font-weight: 600; color: #111; }
     .mega-product-links { display: flex; flex-direction: column; gap: 4px; }
     .mega-product-link {
       display: flex; align-items: center; gap: 10px; padding: 10px 12px;
       border-radius: var(--radius-sm); transition: background 0.2s ease;
-      font-size: 13px; font-weight: 500; color: var(--text-secondary);
+      font-size: 13px; font-weight: 500; color: #555;
     }
-    .mega-product-link:hover { background: rgba(255,255,255,0.05); color: var(--white); }
+    .mega-product-link:hover { background: rgba(0,0,0,0.04); color: #111; }
     .mega-product-link .mega-link-icon {
-      width: 28px; height: 28px; border-radius: 6px; background: rgba(255,255,255,0.05);
+      width: 28px; height: 28px; border-radius: 6px; background: rgba(0,0,0,0.04);
       display: flex; align-items: center; justify-content: center; flex-shrink: 0;
     }
-    .mega-divider { width: 1px; background: rgba(255,255,255,0.06); }
+    .mega-divider { width: 1px; background: rgba(0,0,0,0.06); }
     .mega-footer {
-      margin-top: 16px; padding-top: 16px; border-top: 1px solid rgba(255,255,255,0.06);
+      margin-top: 16px; padding-top: 16px; border-top: 1px solid rgba(0,0,0,0.08);
       display: flex; justify-content: space-between; align-items: center;
     }
     .mega-footer a {
-      font-size: 12px; font-weight: 700; color: var(--lime);
+      font-size: 12px; font-weight: 700; color: #7a8015;
       letter-spacing: 0.06em; text-transform: uppercase;
       display: inline-flex; align-items: center; gap: 6px;
       transition: gap 0.3s ease;
@@ -505,19 +505,19 @@
                 <div class="mega-col-label">Shop by Vehicle</div>
                 <div class="mega-vehicles">
                   <a href="https://www.saltshift.com/collections/4wd-caravan" class="mega-vehicle-card">
-                    <img src="https://cdn.shopify.com/s/files/1/0568/9196/5591/files/Salt-Shift-Uitimate-Off-Road-Wash-Kit-1Jet.webp?v=1761259579" alt="4WD">
+                    <img src="https://images.pexels.com/photos/18086655/pexels-photo-18086655.jpeg?auto=compress&cs=tinysrgb&w=400" alt="4WD in mud">
                     <span>4WD & Caravan</span>
                   </a>
                   <a href="https://www.saltshift.com/collections/shop-marine-care" class="mega-vehicle-card">
-                    <img src="https://www.saltshift.com/cdn/shop/files/Salt-Shift-Marine-Salt-Wash-1L.jpg?v=1771386038&width=460" alt="Marine">
+                    <img src="https://images.pexels.com/photos/18636559/pexels-photo-18636559.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Jet ski on water">
                     <span>Boats & Jet Skis</span>
                   </a>
                   <a href="https://www.saltshift.com/collections/coastal-car-wash" class="mega-vehicle-card">
-                    <img src="https://www.saltshift.com/cdn/shop/files/Salt-Shift-4x4-Caravan-Wash-1L.jpg?v=1771386022&width=460" alt="Coastal Car">
+                    <img src="https://images.pexels.com/photos/14788933/pexels-photo-14788933.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Car on coastal road">
                     <span>Coastal Cars</span>
                   </a>
                   <a href="https://www.saltshift.com/collections/dirt-bike-atv-care" class="mega-vehicle-card">
-                    <img src="https://www.saltshift.com/cdn/shop/files/Salt-Shift-Marine-Engine-Flush-Wash-1L.jpg?v=1771386057&width=460" alt="Dirt Bike">
+                    <img src="https://images.pexels.com/photos/13252308/pexels-photo-13252308.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Off-road vehicle on sand">
                     <span>Dirt Bike & ATV</span>
                   </a>
                 </div>
@@ -526,23 +526,23 @@
                 <div class="mega-col-label">Shop by Product</div>
                 <div class="mega-product-links">
                   <a href="https://www.saltshift.com/collections/formulas" class="mega-product-link">
-                    <span class="mega-link-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--lime)" stroke-width="2"><path d="M6 2v6h.01L10 12l-3.99 4H6v6h4v-6h-.01L14 12l-3.99-4H10V2h4"/></svg></span>
+                    <span class="mega-link-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#7a8015" stroke-width="2"><path d="M6 2v6h.01L10 12l-3.99 4H6v6h4v-6h-.01L14 12l-3.99-4H10V2h4"/></svg></span>
                     Formulas & Washes
                   </a>
                   <a href="https://www.saltshift.com/collections/hardware" class="mega-product-link">
-                    <span class="mega-link-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--lime)" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M12 1v4M12 19v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M1 12h4M19 12h4M4.22 19.78l2.83-2.83M16.95 7.05l2.83-2.83"/></svg></span>
+                    <span class="mega-link-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#7a8015" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M12 1v4M12 19v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M1 12h4M19 12h4M4.22 19.78l2.83-2.83M16.95 7.05l2.83-2.83"/></svg></span>
                     Hardware & Tools
                   </a>
                   <a href="https://www.saltshift.com/collections/value-bundles" class="mega-product-link">
-                    <span class="mega-link-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--lime)" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a4 4 0 0 0-8 0v2"/></svg></span>
+                    <span class="mega-link-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#7a8015" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a4 4 0 0 0-8 0v2"/></svg></span>
                     Value Bundles
                   </a>
                   <a href="https://www.saltshift.com/collections/cleaning-kits" class="mega-product-link">
-                    <span class="mega-link-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--lime)" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg></span>
+                    <span class="mega-link-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#7a8015" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg></span>
                     Complete Kits
                   </a>
                   <a href="https://www.saltshift.com/collections/detailing-accessories" class="mega-product-link">
-                    <span class="mega-link-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--lime)" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg></span>
+                    <span class="mega-link-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#7a8015" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg></span>
                     Detailing Accessories
                   </a>
                 </div>
