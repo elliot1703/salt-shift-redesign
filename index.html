@@ -65,7 +65,9 @@
       display: flex; align-items: center; justify-content: space-between;
       padding: 0 clamp(32px, 5vw, 80px);
     }
+    .nav-logo { display: flex; align-items: center; gap: 10px; }
     .nav-logo img { height: 36px; filter: brightness(0) invert(1); transition: height 0.3s ease; }
+    .nav-logo-text { font-family: var(--font-heading); font-size: 18px; font-weight: 700; color: var(--white); letter-spacing: 0.02em; }
     .nav.scrolled .nav-logo img { height: 30px; }
     .nav-center { display: none; /* merged into nav-right */ }
     .nav-link {
@@ -491,6 +493,7 @@
     <div class="nav-inner">
       <a href="#" class="nav-logo">
         <img src="https://www.saltshift.com/cdn/shop/files/SS_logo.png?v=1739928597&width=200" alt="Salt Shift">
+        <span class="nav-logo-text">Salt Shift</span>
       </a>
       <div class="nav-right">
         <div class="nav-shop-trigger">
