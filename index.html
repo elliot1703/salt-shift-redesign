@@ -84,7 +84,7 @@
       border-radius: 100px; font-size: 12px; color: var(--white); font-family: var(--font-body);
       transition: all 0.3s ease;
     }
-    .nav-search input::placeholder { color: var(--text-muted); }
+    .nav-search input::placeholder { color: rgba(255,255,255,0.5); }
     .nav-search input:focus { outline: none; border-color: var(--lime); background: rgba(255,255,255,0.1); width: 220px; }
     .nav-search-icon {
       position: absolute; left: 10px; top: 50%; transform: translateY(-50%);
@@ -180,7 +180,7 @@
       position: absolute; inset: 0; z-index: -1;
       background: url('https://www.saltshift.com/cdn/shop/files/Salt-Shift-Webiste-Banner-Desktop_8700f956-673e-4b8c-ba44-8629317a3c2f.png?crop=center&height=1200&v=1740971467&width=1920') center/cover no-repeat;
     }
-    .hero-content { position: relative; z-index: 1; max-width: 580px; }
+    .hero-content { position: relative; z-index: 1; max-width: 580px; padding-left: 0; }
     .hero-badge {
       display: inline-flex; align-items: center; gap: 8px;
       padding: 6px 16px; background: rgba(197, 206, 47, 0.12); border: 1px solid rgba(197, 206, 47, 0.25);
@@ -338,15 +338,17 @@
     .step-card p { font-size: 15px; color: var(--text-secondary); line-height: 1.65; }
 
     /* ========== BEST SELLERS ========== */
+    .best-sellers-section { background: #FFFFFF; }
+    .best-sellers-section .section-label::before { background: #7a8015; }
     .products-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; margin-top: 48px; }
     .product-card {
-      background: var(--bg-card); border: 1px solid rgba(255,255,255,0.06);
+      background: #FFFFFF; border: 1px solid rgba(0,0,0,0.08);
       border-radius: var(--radius-md); overflow: hidden;
       transition: all 0.4s var(--ease);
     }
-    .product-card:hover { transform: translateY(-6px); border-color: rgba(197, 206, 47, 0.2); box-shadow: 0 16px 40px rgba(0,0,0,0.4); }
+    .product-card:hover { transform: translateY(-6px); border-color: rgba(197, 206, 47, 0.4); box-shadow: 0 16px 40px rgba(0,0,0,0.1); }
     .product-img {
-      position: relative; aspect-ratio: 1; background: #111; overflow: hidden;
+      position: relative; aspect-ratio: 1; background: #F5F5F5; overflow: hidden;
       display: flex; align-items: center; justify-content: center;
     }
     .product-img img { width: 80%; height: 80%; object-fit: contain; transition: transform 0.5s var(--ease); }
@@ -360,12 +362,12 @@
     .product-info { padding: 20px; }
     .product-rating { display: flex; align-items: center; gap: 6px; margin-bottom: 8px; }
     .product-stars { color: #F5A623; font-size: 13px; letter-spacing: 2px; }
-    .product-rating span { font-size: 12px; color: var(--text-muted); }
-    .product-info h3 { font-family: var(--font-heading); font-size: 16px; font-weight: 700; margin-bottom: 4px; line-height: 1.3; }
-    .product-tagline { font-size: 13px; color: var(--text-secondary); margin-bottom: 12px; }
+    .product-rating span { font-size: 12px; color: #999; }
+    .product-info h3 { font-family: var(--font-heading); font-size: 16px; font-weight: 700; margin-bottom: 4px; line-height: 1.3; color: #111; }
+    .product-tagline { font-size: 13px; color: #666; margin-bottom: 12px; }
     .product-price { display: flex; align-items: baseline; gap: 8px; margin-bottom: 16px; }
-    .product-price .current { font-family: var(--font-heading); font-size: 22px; font-weight: 800; color: var(--white); }
-    .product-price .original { font-size: 14px; color: var(--text-muted); text-decoration: line-through; }
+    .product-price .current { font-family: var(--font-heading); font-size: 22px; font-weight: 800; color: #111; }
+    .product-price .original { font-size: 14px; color: #999; text-decoration: line-through; }
     .product-atc {
       width: 100%; padding: 12px; background: var(--lime); color: #000;
       font-weight: 700; font-size: 13px; letter-spacing: 0.08em; text-transform: uppercase;
@@ -550,7 +552,7 @@
       <div class="nav-right">
         <div class="nav-search">
           <span class="nav-search-icon">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--text-muted)" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.5)" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
           </span>
           <input type="text" placeholder="Search for a product...">
         </div>
@@ -732,12 +734,12 @@
   </section>
 
   <!-- ====== BEST SELLERS ====== -->
-  <section class="section" id="products" style="background: var(--bg-card);">
+  <section class="section best-sellers-section" id="products">
     <div class="container">
       <div class="reveal">
-        <div class="section-label">Best Sellers</div>
-        <div class="section-title">Gear That Gets It Done</div>
-        <p class="section-desc">Our most popular kits and formulas — engineered as a system, not just a soap.</p>
+        <div class="section-label" style="color: #7a8015;">Best Sellers</div>
+        <div class="section-title" style="color: #111;">Gear That Gets It Done</div>
+        <p class="section-desc" style="color: #555;">Our most popular kits and formulas — engineered as a system, not just a soap.</p>
       </div>
       <div class="products-grid">
         <a href="https://www.saltshift.com/products/salt-shift-chassis-flusher-kit" class="product-card reveal reveal-delay-1">
@@ -792,9 +794,59 @@
             <button class="product-atc">Shop Options</button>
           </div>
         </a>
+        <!-- Row 2 -->
+        <a href="https://www.saltshift.com/products/marine-salt-wash" class="product-card reveal reveal-delay-1">
+          <div class="product-img">
+            <img src="https://www.saltshift.com/cdn/shop/files/Salt-Shift-Marine-Salt-Wash-1L.jpg?v=1771386038&width=460" alt="Marine Salt Wash" loading="lazy">
+          </div>
+          <div class="product-info">
+            <div class="product-rating"><span class="product-stars">★★★★★</span><span>(203)</span></div>
+            <h3>Marine Salt Wash 1L</h3>
+            <p class="product-tagline">Strips salt from boats & outboards</p>
+            <div class="product-price"><span class="current">$34.95</span></div>
+            <button class="product-atc">Add to Cart</button>
+          </div>
+        </a>
+        <a href="https://www.saltshift.com/products/salt-shift-heavy-duty-degreaser" class="product-card reveal reveal-delay-2">
+          <div class="product-img">
+            <img src="https://www.saltshift.com/cdn/shop/files/Salt-Shift-Heavy-Duty-Degreaser-1L.jpg?v=1771386050&width=460" alt="Heavy Duty Degreaser" loading="lazy">
+          </div>
+          <div class="product-info">
+            <div class="product-rating"><span class="product-stars">★★★★★</span><span>(89)</span></div>
+            <h3>Heavy Duty Degreaser 1L</h3>
+            <p class="product-tagline">Cuts through grease & grime fast</p>
+            <div class="product-price"><span class="current">$29.95</span></div>
+            <button class="product-atc">Add to Cart</button>
+          </div>
+        </a>
+        <a href="https://www.saltshift.com/products/marine-engine-flush-wash" class="product-card reveal reveal-delay-3">
+          <div class="product-img">
+            <span class="product-save">Save $30</span>
+            <img src="https://www.saltshift.com/cdn/shop/files/Salt-Shift-Marine-Engine-Flush-Wash-1L.jpg?v=1771386057&width=460" alt="Marine Engine Flush" loading="lazy">
+          </div>
+          <div class="product-info">
+            <div class="product-rating"><span class="product-stars">★★★★★</span><span>(74)</span></div>
+            <h3>Marine Engine Flush & Wash</h3>
+            <p class="product-tagline">Internal engine salt protection</p>
+            <div class="product-price"><span class="current">$59</span><span class="original">$89</span></div>
+            <button class="product-atc">Add to Cart</button>
+          </div>
+        </a>
+        <a href="https://www.saltshift.com/products/4x4-caravan-wash" class="product-card reveal reveal-delay-4">
+          <div class="product-img">
+            <img src="https://www.saltshift.com/cdn/shop/files/Salt-Shift-4x4-Caravan-Wash-1L.jpg?v=1771386022&width=460" alt="4x4 & Caravan Wash" loading="lazy">
+          </div>
+          <div class="product-info">
+            <div class="product-rating"><span class="product-stars">★★★★★</span><span>(142)</span></div>
+            <h3>4x4 & Caravan Wash 1L</h3>
+            <p class="product-tagline">All-surface safe formula</p>
+            <div class="product-price"><span class="current">$34.95</span></div>
+            <button class="product-atc">Add to Cart</button>
+          </div>
+        </a>
       </div>
       <div style="text-align:center; margin-top:40px;" class="reveal">
-        <a href="https://www.saltshift.com/collections/shop-all" class="btn-secondary">View All Products <span class="btn-arrow">→</span></a>
+        <a href="https://www.saltshift.com/collections/shop-all" class="btn-secondary" style="color: #111; border-color: rgba(0,0,0,0.2);">View All Products <span class="btn-arrow">→</span></a>
       </div>
     </div>
   </section>
