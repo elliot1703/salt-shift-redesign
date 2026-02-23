@@ -63,17 +63,17 @@
     }
     .nav-inner {
       display: flex; align-items: center; justify-content: space-between;
-      padding: 0 clamp(24px, 4vw, 60px);
+      padding: 0 clamp(32px, 5vw, 80px);
     }
     .nav-logo img { height: 36px; filter: brightness(0) invert(1); transition: height 0.3s ease; }
     .nav.scrolled .nav-logo img { height: 30px; }
-    .nav-center { display: flex; align-items: center; gap: 28px; }
+    .nav-center { display: none; /* merged into nav-right */ }
     .nav-link {
       font-size: 13px; font-weight: 500; letter-spacing: 0.02em;
       color: var(--text-secondary); transition: color 0.3s ease; position: relative;
     }
     .nav-link:hover { color: var(--white); }
-    .nav-right { display: flex; align-items: center; gap: 12px; }
+    .nav-right { display: flex; align-items: center; gap: 24px; }
     /* Search bar */
     .nav-search {
       position: relative; display: flex; align-items: center;
@@ -102,6 +102,8 @@
 
     /* ========== MEGA DROPDOWN ========== */
     .nav-shop-trigger { position: relative; }
+    .nav-link .nav-chevron { display: inline-block; margin-left: 4px; transition: transform 0.25s ease; }
+    .nav-shop-trigger:hover .nav-chevron { transform: rotate(180deg); }
     .mega-dropdown {
       position: absolute; top: 100%; left: 50%; transform: translateX(-50%);
       width: 680px; padding: 28px 32px;
@@ -165,22 +167,17 @@
       position: relative; min-height: 100vh; display: flex; align-items: center;
       overflow: hidden; padding: 120px 0 80px;
     }
-    .hero-video-wrap {
+    .hero-bg-wrap {
       position: absolute; inset: 0; z-index: 0; overflow: hidden;
     }
-    .hero-video-wrap video {
+    .hero-bg-wrap img {
       width: 100%; height: 100%; object-fit: cover;
     }
-    .hero-video-wrap::after {
+    .hero-bg-wrap::after {
       content: ''; position: absolute; inset: 0;
-      background: linear-gradient(135deg, rgba(10,10,10,0.93) 0%, rgba(10,10,10,0.75) 40%, rgba(10,10,10,0.55) 100%);
+      background: linear-gradient(135deg, rgba(10,10,10,0.88) 0%, rgba(10,10,10,0.7) 40%, rgba(10,10,10,0.45) 100%);
     }
-    /* Fallback for browsers that don't autoplay */
-    .hero-fallback-bg {
-      position: absolute; inset: 0; z-index: -1;
-      background: url('https://www.saltshift.com/cdn/shop/files/Salt-Shift-Webiste-Banner-Desktop_8700f956-673e-4b8c-ba44-8629317a3c2f.png?crop=center&height=1200&v=1740971467&width=1920') center/cover no-repeat;
-    }
-    .hero .container { max-width: none; margin: 0; padding: 0 clamp(24px, 4vw, 60px); }
+    .hero .container { max-width: none; margin: 0; padding: 0 clamp(32px, 5vw, 80px); }
     .hero-content { position: relative; z-index: 1; max-width: 580px; }
     .hero-badge {
       display: inline-flex; align-items: center; gap: 8px;
@@ -287,6 +284,9 @@
     .cat-card-img img {
       width: 75%; height: 75%; object-fit: contain;
       transition: transform 0.5s var(--ease);
+    }
+    .cat-card-img--cover img {
+      width: 100%; height: 100%; object-fit: cover;
     }
     .cat-card:hover .cat-card-img img { transform: scale(1.08); }
     .cat-offer-badge {
@@ -454,7 +454,8 @@
       .mega-dropdown { width: 560px; }
     }
     @media (max-width: 768px) {
-      .nav-center { display: none; }
+      .nav-right .nav-shop-trigger,
+      .nav-right .nav-link,
       .nav-search { display: none; }
       .nav-mobile-toggle { display: block; }
       .hero h1 { font-size: 40px; }
@@ -491,9 +492,9 @@
       <a href="#" class="nav-logo">
         <img src="https://www.saltshift.com/cdn/shop/files/SS_logo.png?v=1739928597&width=200" alt="Salt Shift">
       </a>
-      <div class="nav-center">
+      <div class="nav-right">
         <div class="nav-shop-trigger">
-          <a href="#categories" class="nav-link">Shop</a>
+          <a href="#categories" class="nav-link">Shop <svg class="nav-chevron" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></a>
           <!-- MEGA DROPDOWN -->
           <div class="mega-dropdown">
             <div class="mega-grid">
@@ -554,8 +555,6 @@
         <a href="#difference" class="nav-link">The Difference</a>
         <a href="#story" class="nav-link">Our Story</a>
         <a href="#reviews" class="nav-link">Reviews</a>
-      </div>
-      <div class="nav-right">
         <div class="nav-search">
           <span class="nav-search-icon">
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.5)" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
@@ -570,11 +569,8 @@
 
   <!-- ====== HERO ====== -->
   <section class="hero">
-    <div class="hero-video-wrap">
-      <div class="hero-fallback-bg"></div>
-      <video autoplay muted loop playsinline preload="auto" poster="https://www.saltshift.com/cdn/shop/files/Salt-Shift-Webiste-Banner-Desktop_8700f956-673e-4b8c-ba44-8629317a3c2f.png?crop=center&height=1200&v=1740971467&width=1920">
-        <source src="https://assets.mixkit.co/videos/44392/44392-720.mp4" type="video/mp4">
-      </video>
+    <div class="hero-bg-wrap">
+      <img src="https://images.pexels.com/photos/2417260/pexels-photo-2417260.jpeg?auto=compress&cs=tinysrgb&w=1920" alt="4WD on sand dunes">
     </div>
     <div class="container">
       <div class="hero-content">
@@ -649,8 +645,8 @@
       </div>
       <div class="categories-grid">
         <a href="https://www.saltshift.com/collections/4wd-caravan" class="cat-card reveal reveal-delay-1" data-category="4wd">
-          <div class="cat-card-img">
-            <img src="https://cdn.shopify.com/s/files/1/0568/9196/5591/files/Salt-Shift-Uitimate-Off-Road-Wash-Kit-1Jet.webp?v=1761259579" alt="Ultimate Off-Road Wash Kit" loading="lazy">
+          <div class="cat-card-img cat-card-img--cover">
+            <img src="https://images.pexels.com/photos/18086655/pexels-photo-18086655.jpeg?auto=compress&cs=tinysrgb&w=800" alt="4WD truck driving through mud" loading="lazy">
           </div>
           <div class="cat-card-body">
             <span class="cat-tag">4WD & Off-Road</span>
@@ -660,9 +656,9 @@
           </div>
         </a>
         <a href="https://www.saltshift.com/collections/shop-marine-care" class="cat-card reveal reveal-delay-2" data-category="marine">
-          <div class="cat-card-img">
+          <div class="cat-card-img cat-card-img--cover">
             <span class="cat-offer-badge">On Offer — Save 25%</span>
-            <img src="https://www.saltshift.com/cdn/shop/files/Salt-Shift-Marine-Salt-Wash-1L.jpg?v=1771386038&width=460" alt="Marine Salt Wash" loading="lazy">
+            <img src="https://images.pexels.com/photos/18636559/pexels-photo-18636559.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Jet ski on open water" loading="lazy">
           </div>
           <div class="cat-card-body">
             <span class="cat-tag">Marine</span>
@@ -672,8 +668,8 @@
           </div>
         </a>
         <a href="https://www.saltshift.com/collections/coastal-car-wash" class="cat-card reveal reveal-delay-3" data-category="coastal">
-          <div class="cat-card-img">
-            <img src="https://www.saltshift.com/cdn/shop/files/Salt-Shift-4x4-Caravan-Wash-1L.jpg?v=1771386022&width=460" alt="Coastal Car Wash" loading="lazy">
+          <div class="cat-card-img cat-card-img--cover">
+            <img src="https://images.pexels.com/photos/14788933/pexels-photo-14788933.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Car driving along coastal road" loading="lazy">
           </div>
           <div class="cat-card-body">
             <span class="cat-tag">Coastal</span>
